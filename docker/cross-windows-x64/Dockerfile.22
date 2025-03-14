@@ -2,6 +2,6 @@ FROM yosyshq/cross-windows-x64:2.1
 
 RUN curl -L https://github.com/mmicko/fedora-ada/releases/download/v1/mingw64-gcc-10.2.1-2.fc33.x86_64.rpm --output /tmp/mingw64-gcc-10.2.1-2.fc33.x86_64.rpm && \
     curl -L https://github.com/mmicko/fedora-ada/releases/download/v1/mingw64-gcc-gnat-10.2.1-2.fc33.x86_64.rpm --output /tmp/mingw64-gcc-gnat-10.2.1-2.fc33.x86_64.rpm && \
-    dnf localinstall -y --allow-erasing /tmp/mingw64-gcc-10.2.1-2.fc33.x86_64.rpm && \
+    dnf localinstall --allow-erasing -y /tmp/mingw64-gcc-10.2.1-2.fc33.x86_64.rpm && \
     dnf install -y libgnat && \
     dnf localinstall -y /tmp/mingw64-gcc-gnat-10.2.1-2.fc33.x86_64.rpm
